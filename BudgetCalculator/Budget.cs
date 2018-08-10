@@ -11,6 +11,5 @@ namespace BudgetCalculator
     {
         public string month { get; set; }
         public decimal amt { get; set; }
-
     }
 }
