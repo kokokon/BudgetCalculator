@@ -58,7 +58,7 @@ namespace BudgetCalculator
 
         private decimal CalculateMonthlyBudget(DateTime startDate, DateTime endDate)
         {
-            decimal totalAmt = GetDayDiff(startDate, endDate) * CalculateDailyBudget(startDate, endDate);
+            decimal totalAmt = GetDayDiff(startDate, endDate) * CalculateDailyBudget(startDate);
             return totalAmt;
         }
 
@@ -67,7 +67,7 @@ namespace BudgetCalculator
             return (endDate - startDate).Days + 1;
         }
 
-        private decimal CalculateDailyBudget(DateTime startDate, DateTime endDate)
+        private decimal CalculateDailyBudget(DateTime startDate)
         {
             Budget budget = new Budget();
             if (!listBudget.Exists(x => x.month == startDate.ToString("yyyyMM")))
